@@ -1,38 +1,130 @@
-.App {
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  background: #e07373;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.card {
+  width: 100%;
+  max-width: 532px;
+  padding: 28px 24px 26px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  margin: 0 0 14px;
+  font-size: 32px;
+  font-weight: 800;
+  color: #111827;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.scores {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.score {
+  padding: 8px 10px;
+  font-size: 14px;
+  font-weight: 700;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.score.x {
+  color: #ef2b2b;
+}
+
+.score.o {
+  color: #0ea5e9;
+}
+
+.score.draws {
+  color: #374151;
+}
+
+.status {
+  margin: 0 0 14px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #000;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto 18px;
+}
+
+.cell {
+  aspect-ratio: 1 / 1;
+  font-size: 22px;
+  font-weight: 800;
+  color: #000;
+  background: #fff;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.cell.win {
+  color: #22c55e;
+  border-color: #22c55e;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn {
+  padding: 12px 14px;
+  font-size: 16px;
+  font-weight: 700;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn.primary {
+  color: #fff;
+  background: #2563eb;
+}
+
+.btn.secondary {
+  color: #111827;
+  background: #fff;
+  border-color: #e5e7eb;
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 20px 14px;
   }
-  to {
-    transform: rotate(360deg);
+
+  h1 {
+    font-size: 26px;
   }
 }
